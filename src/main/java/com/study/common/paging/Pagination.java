@@ -14,10 +14,18 @@ public class Pagination {
     private boolean existPrevPage;    // 이전 페이지 존재 여부
     private boolean existNextPage;    // 다음 페이지 존재 여부
 
+/*    public Pagination(int totalRecordCount, SearchDto params) {
+        if (totalRecordCount > 0) {
+            this.totalRecordCount = totalRecordCount;
+            calculation(params);
+        }
+    }*/
+
     public Pagination(int totalRecordCount, SearchDto params) {
         if (totalRecordCount > 0) {
             this.totalRecordCount = totalRecordCount;
             calculation(params);
+            params.setPagination(this);
         }
     }
 
